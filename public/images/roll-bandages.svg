@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+  <!-- Elastic Conforming Roll Bandage -->
+  <ellipse cx="230" cy="140" rx="45" ry="70" fill="#E2E8F0" stroke="#94A3B8" stroke-width="3"/>
+  <ellipse cx="230" cy="140" rx="15" ry="30" fill="#CBD5E1" stroke="#94A3B8" stroke-width="2"/>
+  <path d="M 130 70 L 230 70 C 275 70 275 210 230 210 L 130 210 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3"/>
+  <!-- Unrolled strip -->
+  <path d="M 130 210 L 70 230 L 70 160 L 130 140 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+  <!-- Texture lines -->
+  <line x1="140" y1="85" x2="220" y2="85" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="3 3"/>
+  <line x1="140" y1="115" x2="220" y2="115" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="3 3"/>
+  <line x1="140" y1="145" x2="220" y2="145" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="3 3"/>
+  <line x1="140" y1="175" x2="220" y2="175" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="3 3"/>
+</svg>

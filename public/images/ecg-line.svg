@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="100%" height="100%" preserveAspectRatio="none">
+  <path d="M 0 60 
+           L 120 60 
+           L 135 55 
+           L 145 65 
+           L 160 15 
+           L 178 105 
+           L 194 40 
+           L 206 72 
+           L 218 60 
+           L 235 60 
+           C 245 60 252 48 260 60 
+           L 420 60 
+           L 435 55 
+           L 445 65 
+           L 460 15 
+           L 478 105 
+           L 494 40 
+           L 506 72 
+           L 518 60 
+           L 535 60 
+           C 545 60 552 48 560 60 
+           L 720 60 
+           L 735 55 
+           L 745 65 
+           L 760 15 
+           L 778 105 
+           L 794 40 
+           L 806 72 
+           L 818 60 
+           L 835 60 
+           C 845 60 852 48 860 60 
+           L 1020 60 
+           L 1035 55 
+           L 1045 65 
+           L 1060 15 
+           L 1078 105 
+           L 1094 40 
+           L 1106 72 
+           L 1118 60 
+           L 1200 60" 
+        fill="none" 
+        stroke="#E3111D" 
+        stroke-width="3" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" />
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+  <!-- Heavy Trauma Bag with Reflective Stripes -->
+  <path d="M 140 80 C 140 50 260 50 260 80" fill="none" stroke="#1E293B" stroke-width="12" stroke-linecap="round"/>
+  <rect x="70" y="75" width="260" height="175" rx="20" fill="#E3111D" stroke="#990000" stroke-width="4"/>
+  <!-- Side Pockets -->
+  <rect x="55" y="105" width="20" height="120" rx="8" fill="#B90C16"/>
+  <rect x="325" y="105" width="20" height="120" rx="8" fill="#B90C16"/>
+  <!-- High-vis reflective stripe -->
+  <rect x="70" y="145" width="260" height="24" fill="#FACC15"/>
+  <!-- Star of Life / Medical cross -->
+  <circle cx="200" cy="115" r="25" fill="#FFFFFF"/>
+  <rect x="194" y="96" width="12" height="38" fill="#0178A2"/>
+  <rect x="181" y="109" width="38" height="12" fill="#0178A2"/>
+  <text x="200" y="205" font-family="sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">TRAUMA KIT</text>
+  <text x="200" y="225" font-family="sans-serif" font-size="10" font-weight="bold" fill="#FFFFFF" text-anchor="middle">EMERGENCY RESPONSE</text>
+</svg>

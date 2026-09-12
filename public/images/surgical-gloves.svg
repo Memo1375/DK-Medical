@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+  <!-- Pair of Nitrile/Latex Surgical Gloves -->
+  <!-- Left Glove (Blue) -->
+  <path d="M 120 220 L 120 160 L 105 140 C 95 125 110 110 120 125 L 128 140 L 128 85 C 128 70 142 70 142 85 L 142 140 L 145 80 C 145 65 159 65 159 80 L 159 140 L 162 90 C 162 75 176 75 176 90 L 176 150 L 178 110 C 178 98 190 98 190 110 L 185 180 L 180 220 Z" fill="#0178A2" stroke="#015B7A" stroke-width="2"/>
+  <rect x="116" y="218" width="68" height="12" rx="4" fill="#015B7A"/>
+
+  <!-- Right Glove (Teal) -->
+  <path d="M 220 220 L 215 180 L 210 110 C 210 98 222 98 222 110 L 224 150 L 224 90 C 224 75 238 75 238 90 L 241 140 L 241 80 C 241 65 255 65 255 80 L 258 140 L 258 85 C 258 70 272 70 272 85 L 272 140 L 280 125 C 290 110 305 125 295 140 L 280 160 L 280 220 Z" fill="#4EC2B5" stroke="#3BA497" stroke-width="2"/>
+  <rect x="216" y="218" width="68" height="12" rx="4" fill="#3BA497"/>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 130" width="100%" height="100%">
+  <defs>
+    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softGlow)">
+    <!-- Letter D (Teal #4EC2B5) -->
+    <path d="M 18 20 L 72 20 C 104 20 120 38 120 65 C 120 92 104 110 72 110 L 18 110 Z M 44 42 L 44 88 L 70 88 C 88 88 95 78 95 65 C 95 52 88 42 70 42 Z" fill="#4EC2B5" />
+
+    <!-- Letter K (Ocean Blue #0178A2) -->
+    <path d="M 136 20 L 162 20 L 162 58 L 205 20 L 238 20 L 186 65 L 242 110 L 208 110 L 162 72 L 162 110 L 136 110 Z" fill="#0178A2" />
+
+    <!-- Medical Wordmark (Teal #4EC2B5) -->
+    <text x="252" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="36" fill="#4EC2B5" letter-spacing="-0.5">Medical</text>
+
+    <!-- Subtitle (Medical & General Supplies) -->
+    <text x="253" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="10.5" fill="#0178A2" letter-spacing="1.2">MEDICAL &amp; GENERAL SUPPLIES</text>
+
+    <!-- Red Heartbeat ECG Pulse Line -->
+    <path d="M 218 95 L 272 95 L 277 91 L 282 99 L 290 54 L 300 120 L 308 80 L 314 100 L 320 95 L 328 95 C 334 95 340 86 346 95 L 420 95" 
+          fill="none" 
+          stroke="#E3111D" 
+          stroke-width="4.5" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+  </g>
+</svg>

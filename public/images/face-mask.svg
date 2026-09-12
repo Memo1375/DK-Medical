@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+  <!-- 3-Ply Surgical Mask -->
+  <!-- Ear Loops -->
+  <path d="M 100 110 C 50 110 50 190 100 190" fill="none" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 300 110 C 350 110 350 190 300 190" fill="none" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <!-- Mask Body -->
+  <rect x="90" y="90" width="220" height="120" rx="14" fill="#4EC2B5" stroke="#3BA497" stroke-width="3"/>
+  <!-- Pleats -->
+  <line x1="90" y1="120" x2="310" y2="120" stroke="#3BA497" stroke-width="2"/>
+  <line x1="90" y1="150" x2="310" y2="150" stroke="#3BA497" stroke-width="2"/>
+  <line x1="90" y1="180" x2="310" y2="180" stroke="#3BA497" stroke-width="2"/>
+  <!-- Nose bridge wire highlight -->
+  <line x1="150" y1="96" x2="250" y2="96" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+</svg>

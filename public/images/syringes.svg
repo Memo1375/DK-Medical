@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+  <!-- Syringe Needle & Barrel -->
+  <!-- Needle -->
+  <line x1="200" y1="30" x2="200" y2="80" stroke="#94A3B8" stroke-width="3" stroke-linecap="round"/>
+  <!-- Hub -->
+  <polygon points="194,80 206,80 203,95 197,95" fill="#4EC2B5"/>
+  <!-- Barrel -->
+  <rect x="175" y="95" width="50" height="120" rx="4" fill="#FFFFFF" stroke="#0178A2" stroke-width="3"/>
+  <!-- Measurement marks -->
+  <line x1="175" y1="110" x2="195" y2="110" stroke="#0178A2" stroke-width="2"/>
+  <text x="215" y="114" font-family="monospace" font-size="9" fill="#0178A2">1ml</text>
+  <line x1="175" y1="130" x2="195" y2="130" stroke="#0178A2" stroke-width="2"/>
+  <text x="215" y="134" font-family="monospace" font-size="9" fill="#0178A2">2ml</text>
+  <line x1="175" y1="150" x2="195" y2="150" stroke="#0178A2" stroke-width="2"/>
+  <text x="215" y="154" font-family="monospace" font-size="9" fill="#0178A2">3ml</text>
+  <line x1="175" y1="170" x2="195" y2="170" stroke="#0178A2" stroke-width="2"/>
+  <text x="215" y="174" font-family="monospace" font-size="9" fill="#0178A2">4ml</text>
+  <line x1="175" y1="190" x2="195" y2="190" stroke="#0178A2" stroke-width="2"/>
+  <text x="215" y="194" font-family="monospace" font-size="9" fill="#0178A2">5ml</text>
+  <!-- Liquid in barrel -->
+  <rect x="177" y="135" width="46" height="78" fill="#4EC2B5" fill-opacity="0.3"/>
+  <!-- Plunger -->
+  <rect x="194" y="215" width="12" height="40" fill="#CBD5E1"/>
+  <rect x="180" y="255" width="40" height="8" rx="2" fill="#0178A2"/>
+  <!-- Flange -->
+  <rect x="160" y="215" width="80" height="8" rx="2" fill="#0178A2"/>
+</svg>

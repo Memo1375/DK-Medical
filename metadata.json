@@ -1,0 +1,6 @@
+{
+  "name": "DK Medical & General Supplies",
+  "description": "South African supplier of quality medical equipment, consumables, PPE, healthcare products, and quotation workflow with full-stack SQL backend.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

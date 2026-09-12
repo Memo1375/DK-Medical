@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+  <!-- Compressor base -->
+  <rect x="140" y="100" width="180" height="130" rx="18" fill="#FFFFFF" stroke="#0178A2" stroke-width="4"/>
+  <rect x="160" y="120" width="80" height="30" rx="6" fill="#0178A2"/>
+  <text x="200" y="140" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">NEBULISER</text>
+  <circle cx="280" cy="135" r="14" fill="#4EC2B5"/>
+  <path d="M 280 128 L 280 142" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <!-- Air vents -->
+  <line x1="240" y1="175" x2="300" y2="175" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+  <line x1="240" y1="185" x2="300" y2="185" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+  <line x1="240" y1="195" x2="300" y2="195" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+  <!-- Tubing and Mask -->
+  <path d="M 170 170 C 120 180 90 220 90 170 C 90 120 100 80 75 70" fill="none" stroke="#4EC2B5" stroke-width="5" stroke-linecap="round"/>
+  <!-- Medicine cup and mask -->
+  <ellipse cx="75" cy="70" rx="20" ry="12" fill="#E2E8F0" stroke="#0178A2" stroke-width="2"/>
+  <path d="M 60 70 C 55 45 95 45 90 70 Z" fill="#4EC2B5" fill-opacity="0.4" stroke="#0178A2" stroke-width="2"/>
+</svg>

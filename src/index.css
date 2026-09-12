@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --dk-teal: #4EC2B5;
+    --dk-teal-dark: #3BA497;
+    --dk-teal-light: #E8F8F6;
+    --dk-blue: #0178A2;
+    --dk-blue-dark: #015B7A;
+    --dk-blue-light: #E6F3F7;
+    --dk-red: #E3111D;
+    --dk-red-dark: #B90C16;
+    --dk-red-light: #FDE8E9;
+  }
+  
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom Utilities for DK Medical Brand */
+.bg-dk-blue { background-color: #0178A2; }
+.bg-dk-blue-dark { background-color: #015B7A; }
+.bg-dk-blue-light { background-color: #E6F3F7; }
+
+.bg-dk-teal { background-color: #4EC2B5; }
+.bg-dk-teal-dark { background-color: #3BA497; }
+.bg-dk-teal-light { background-color: #E8F8F6; }
+
+.bg-dk-red { background-color: #E3111D; }
+.bg-dk-red-light { background-color: #FDE8E9; }
+
+.text-dk-blue { color: #0178A2; }
+.text-dk-blue-dark { color: #015B7A; }
+.text-dk-teal { color: #4EC2B5; }
+.text-dk-teal-dark { color: #3BA497; }
+.text-dk-red { color: #E3111D; }
+
+.border-dk-blue { border-color: #0178A2; }
+.border-dk-teal { border-color: #4EC2B5; }
+.border-dk-red { border-color: #E3111D; }
+
+.focus-ring-dk {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(78, 194, 181, 0.35);
+}
+
+@keyframes pulse-flow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-pulse-flow {
+  animation: pulse-flow 24s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-flow {
+    animation: none;
+  }
+}
