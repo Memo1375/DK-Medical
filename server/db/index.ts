@@ -243,6 +243,14 @@ class DatabaseManager {
         // SECTION 2 — MEDICAL CONSUMABLES (A-Z)
         {
           category_id: 2,
+          name: 'Body Bags',
+          slug: 'body-bags',
+          description: 'A body bag, also known as a cadaver bag, mortuary bag, or human remains pouch, is used for the storage and transportation of deceased bodies. Manufactured from non-absorbent, flexible, heavy-duty PVC with leak-proof heat-sealed seams to reduce fluid and odour emissions. We have all sizes and all different types in stock for forensic, hospital, mortuary, and emergency applications.',
+          specifications: '• Classification: LYSA Medical Sundries (Meets SA governmental regulations)\n• Material: Non-absorbent, flexible, heavy-duty PVC with leak-proof heat-sealed seams\n• Fluid & Odour Containment: Hermetically heat-sealed seams to prevent leaks and reduce emissions; liquid absorption pad included\n• Stock Availability: All sizes (Infant, Child, Standard Adult, Extra Large / XXL) & all different types in stock\n• Construction & Features:\n  - 4 Reinforced grab-handles for secure lifting and transport\n  - Transparent name tag pouch for patient / deceased identification\n  - Lockable zipper pull for security and chain of custody\n  - U-Shaped opening for easy access and dignified placement\n  - May be suitable for cremations\n• Sterilisation: NOT STERILISED\n• Packaging: Individually packed (Each)',
+          image_url: '/images/body-bag.svg'
+        },
+        {
+          category_id: 2,
           name: 'Burn Kits',
           slug: 'burn-kits',
           description: '12-component emergency burn care kit with sterile gel dressings, soothing hydrogel, conforming bandages, cold packs, and burn treatment guide.',
@@ -587,14 +595,34 @@ class DatabaseManager {
           image_url: '/images/trauma-kit.svg',
           description: '16-piece high-impact emergency trauma response kit equipped for life-threatening bleeding, chest trauma, burns, and severe injuries.',
           specifications: '• Kit Contents (16 items): 1. Tactical Tourniquet 2. Sterile Trauma Dressings (10x18cm) 3. Hemostatic Gauze 4. Israeli Emergency Bandage 5. Vented Chest Seal 6. Nitrile Gloves 7. CPR Face Shield 8. Trauma Shears 9. Rolled Gauze 10. Triangular Bandage 11. Adhesive Tape 12. Marker & Patient Card 13. Emergency Thermal Blanket 14. Burn Dressing (10x10cm) 15. Eye Pad Dressing 16. Instant Cold Pack\n• Bag: Heavy-duty water-resistant emergency trauma bag with organized compartments'
+        },
+        {
+          slug: 'body-bags',
+          name: 'Body Bags',
+          category_id: 2,
+          image_url: '/images/body-bag.svg',
+          description: 'A body bag, also known as a cadaver bag, mortuary bag, or human remains pouch, is used for the storage and transportation of deceased bodies. Manufactured from non-absorbent, flexible, heavy-duty PVC with leak-proof heat-sealed seams to reduce fluid and odour emissions. We have all sizes and all different types in stock for forensic, hospital, mortuary, and emergency applications.',
+          specifications: '• Classification: LYSA Medical Sundries (Meets SA governmental regulations)\n• Material: Non-absorbent, flexible, heavy-duty PVC with leak-proof heat-sealed seams\n• Fluid & Odour Containment: Hermetically heat-sealed seams to prevent leaks and reduce emissions; liquid absorption pad included\n• Stock Availability: All sizes (Infant, Child, Standard Adult, Extra Large / XXL) & all different types in stock\n• Construction & Features:\n  - 4 Reinforced grab-handles for secure lifting and transport\n  - Transparent name tag pouch for patient / deceased identification\n  - Lockable zipper pull for security and chain of custody\n  - U-Shaped opening for easy access and dignified placement\n  - May be suitable for cremations\n• Sterilisation: NOT STERILISED\n• Packaging: Individually packed (Each)'
         }
       ];
 
+      // Insert any missing products (e.g. Body Bags)
       for (const p of productsToSync) {
-        this.db.run(
-          'UPDATE products SET image_url = ?, description = ?, specifications = ? WHERE slug = ?',
-          [p.image_url, p.description, p.specifications, p.slug]
-        );
+        const check = this.db.exec(`SELECT COUNT(*) FROM products WHERE slug = '${p.slug}'`);
+        const exists = ((check[0]?.values[0]?.[0] as number) || 0) > 0;
+        if (!exists && 'category_id' in p) {
+          console.log(`[DB] Inserting newly added product: ${p.slug}`);
+          this.db.run(
+            `INSERT INTO products (category_id, name, slug, description, specifications, image_url, active, sort_order)
+             VALUES (?, ?, ?, ?, ?, ?, 1, 1)`,
+            [(p as any).category_id, (p as any).name || p.slug, p.slug, p.description, p.specifications, p.image_url]
+          );
+        } else {
+          this.db.run(
+            'UPDATE products SET image_url = ?, description = ?, specifications = ? WHERE slug = ?',
+            [p.image_url, p.description, p.specifications, p.slug]
+          );
+        }
       }
     }
   }

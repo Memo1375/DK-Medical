@@ -213,7 +213,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, featuredProducts
                   Medical Consumables
                 </h3>
                 <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                  First Aid Kits, Burn Kits, Trauma Kits, Gloves, Syringes, Gauze, Gowns, Face Shields, and Sanitizers.
+                  Body Bags, First Aid Kits, Burn Kits, Trauma Kits, Gloves, Syringes, Gauze, Gowns, Face Shields, and Sanitizers.
                 </p>
               </div>
               <div className="mt-6 flex items-center gap-1 text-xs font-bold text-[#0178A2]">

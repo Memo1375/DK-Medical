@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+    <filter id="bagShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="#F8FAFC" rx="12"/>
+
+  <!-- Subtle floor shadow -->
+  <ellipse cx="200" cy="155" rx="115" ry="90" fill="#000000" opacity="0.04" />
+
+  <!-- 4 Reinforced Handles (behind bag) -->
+  <!-- Top Left Handle -->
+  <path d="M 85 95 C 65 95 65 115 85 115" fill="none" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 85 95 C 65 95 65 115 85 115" fill="none" stroke="#CBD5E1" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Bottom Left Handle -->
+  <path d="M 92 185 C 72 185 72 205 92 205" fill="none" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 92 185 C 72 185 72 205 92 205" fill="none" stroke="#CBD5E1" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Top Right Handle -->
+  <path d="M 315 95 C 335 95 335 115 315 115" fill="none" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 315 95 C 335 95 335 115 315 115" fill="none" stroke="#CBD5E1" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Bottom Right Handle -->
+  <path d="M 308 185 C 328 185 328 205 308 205" fill="none" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 308 185 C 328 185 328 205 308 205" fill="none" stroke="#CBD5E1" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Main Body Bag Body (Heavy Duty PVC) -->
+  <g filter="url(#bagShadow)">
+    <path d="M 125 45 
+             C 145 40, 255 40, 275 45 
+             C 300 50, 318 70, 316 110
+             L 306 235
+             C 304 255, 270 262, 200 262
+             C 130 262, 96 255, 94 235
+             L 84 110
+             C 82 70, 100 50, 125 45 Z"
+          fill="url(#bagGrad)" 
+          stroke="#94A3B8" 
+          stroke-width="2.5" />
+  </g>
+
+  <!-- Heat-Sealed Perimeter Welds (Double Stitch / Weld Line) -->
+  <path d="M 127 52 
+           C 145 47, 255 47, 273 52 
+           C 294 56, 310 74, 308 110
+           L 298 232
+           C 296 248, 265 254, 200 254
+           C 135 254, 104 248, 102 232
+           L 92 110
+           C 90 74, 106 56, 127 52 Z"
+        fill="none" 
+        stroke="#CBD5E1" 
+        stroke-width="1.5" 
+        stroke-dasharray="4,2" />
+
+  <!-- 4 Reinforced Handle Mount Plates (Welded onto bag) -->
+  <!-- Top Left Plate -->
+  <rect x="92" y="94" width="16" height="22" rx="3" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="94" y1="96" x2="106" y2="114" stroke="#64748B" stroke-width="1"/>
+  <line x1="106" y1="96" x2="94" y2="114" stroke="#64748B" stroke-width="1"/>
+
+  <!-- Bottom Left Plate -->
+  <rect x="99" y="184" width="16" height="22" rx="3" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="101" y1="186" x2="113" y2="204" stroke="#64748B" stroke-width="1"/>
+  <line x1="113" y1="186" x2="101" y2="204" stroke="#64748B" stroke-width="1"/>
+
+  <!-- Top Right Plate -->
+  <rect x="292" y="94" width="16" height="22" rx="3" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="294" y1="96" x2="306" y2="114" stroke="#64748B" stroke-width="1"/>
+  <line x1="306" y1="96" x2="294" y2="114" stroke="#64748B" stroke-width="1"/>
+
+  <!-- Bottom Right Plate -->
+  <rect x="285" y="184" width="16" height="22" rx="3" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="287" y1="186" x2="299" y2="204" stroke="#64748B" stroke-width="1"/>
+  <line x1="299" y1="186" x2="287" y2="204" stroke="#64748B" stroke-width="1"/>
+
+  <!-- U-Shaped Zipper Track (Heavy Duty Curved Zipper) -->
+  <path d="M 135 70 
+           C 160 62, 240 62, 265 70
+           C 275 75, 278 88, 276 115
+           L 262 230"
+        fill="none" 
+        stroke="#1E293B" 
+        stroke-width="4.5" 
+        stroke-linecap="round" />
+  <path d="M 135 70 
+           C 160 62, 240 62, 265 70
+           C 275 75, 278 88, 276 115
+           L 262 230"
+        fill="none" 
+        stroke="#94A3B8" 
+        stroke-width="2" 
+        stroke-dasharray="2,2" 
+        stroke-linecap="round" />
+
+  <!-- Lockable Zipper Pull -->
+  <circle cx="262" cy="230" r="4.5" fill="#475569" stroke="#0F172A" stroke-width="1.5"/>
+  <path d="M 262 233 L 260 244 L 264 244 Z" fill="#64748B"/>
+  <rect x="259" y="243" width="6" height="4" rx="1" fill="#0178A2"/>
+
+  <!-- Transparent Name Tag Pouch -->
+  <rect x="150" y="115" width="64" height="42" rx="4" fill="#FFFFFF" fill-opacity="0.85" stroke="#0178A2" stroke-width="1.5" stroke-dasharray="3,1.5"/>
+  <line x1="158" y1="126" x2="192" y2="126" stroke="#0178A2" stroke-width="2" stroke-linecap="round"/>
+  <line x1="158" y1="134" x2="206" y2="134" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="158" y1="142" x2="185" y2="142" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Feature Badge / Pill at Bottom -->
+  <g transform="translate(132, 200)">
+    <rect width="136" height="22" rx="11" fill="#E8F8F6" stroke="#4EC2B5" stroke-width="1"/>
+    <text x="68" y="15" fill="#0178A2" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="0.5">
+      HEAVY-DUTY PVC • LEAK-PROOF
+    </text>
+  </g>
+</svg>
