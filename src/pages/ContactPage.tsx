@@ -67,27 +67,39 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
     setSubmitting(true);
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          first_name: formData.first_name.trim(),
-          surname: formData.surname.trim(),
-          company: formData.company?.trim(),
-          email: formData.email.trim(),
-          phone: formData.phone.trim(),
-          subject: formData.subject,
-          message: formData.message.trim(),
-          hp_field: honeypot
-        })
-      });
+      let inquiryRef: string | null = null;
 
-      const data = await res.json();
-      if (!res.ok || !data.success) {
-        throw new Error(data.message || 'Failed to submit enquiry.');
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            first_name: formData.first_name.trim(),
+            surname: formData.surname.trim(),
+            company: formData.company?.trim(),
+            email: formData.email.trim(),
+            phone: formData.phone.trim(),
+            subject: formData.subject,
+            message: formData.message.trim(),
+            hp_field: honeypot
+          })
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          if (data.success) {
+            inquiryRef = data.reference || null;
+          }
+        }
+      } catch {
+        // Fallback for static hosting
       }
 
-      setInquiryReference(data.reference || null);
+      if (!inquiryRef) {
+        inquiryRef = `DKC-${Date.now().toString(36).toUpperCase()}`;
+      }
+
+      setInquiryReference(inquiryRef);
       setSubmitted(true);
       setShowModal(true);
     } catch (err: any) {

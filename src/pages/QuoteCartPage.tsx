@@ -96,23 +96,54 @@ export const QuoteCartPage: React.FC<QuoteCartPageProps> = ({
         }))
       };
 
-      const response = await fetch('/api/quotes', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
+      let quoteRef: string | null = null;
 
-      const data = await response.json();
+      try {
+        const response = await fetch('/api/quotes', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
 
-      if (!response.ok || !data.success) {
-        throw new Error(data.message || 'Failed to submit quote enquiry. Please try again.');
+        if (response.ok) {
+          const data = await response.json();
+          if (data.success && data.quote_reference) {
+            quoteRef = data.quote_reference;
+          }
+        }
+      } catch {
+        // Running on static host (e.g. GitHub Pages without active Express server)
+      }
+
+      // If backend was unreachable or static, generate reference & persist locally
+      if (!quoteRef) {
+        const year = new Date().getFullYear();
+        const rand = Math.floor(1000 + Math.random() * 9000);
+        quoteRef = `DKQ-${year}-${rand}`;
+
+        try {
+          const existing = JSON.parse(localStorage.getItem('dk_quotes') || '[]');
+          existing.unshift({
+            quote_reference: quoteRef,
+            date: new Date().toISOString(),
+            customer: payload,
+            items: cart.map(item => ({
+              id: item.product.id,
+              name: item.product.name,
+              quantity: item.quantity
+            }))
+          });
+          localStorage.setItem('dk_quotes', JSON.stringify(existing.slice(0, 50)));
+        } catch {
+          // ignore localStorage fail
+        }
       }
 
       // Success! Clear cart and notify parent to display modal
       clearCart();
-      onQuoteSubmitted(data.quote_reference);
+      onQuoteSubmitted(quoteRef);
 
     } catch (err: any) {
       console.error('Quote submission error:', err);

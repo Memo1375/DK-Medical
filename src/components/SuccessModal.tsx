@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { CheckCircle, X, ArrowRight, Copy, Check } from 'lucide-react';
+import { CheckCircle, X, ArrowRight, Copy, Check, MessageSquare } from 'lucide-react';
 
 interface SuccessModalProps {
   isOpen: boolean;
@@ -100,6 +100,27 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
                 {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
               </button>
             </div>
+          </div>
+        )}
+
+        {/* Instant WhatsApp / Email Direct Connect */}
+        {activeReference && (
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+            <a
+              href={`https://wa.me/27765113443?text=${encodeURIComponent(`Hello DK Medical, I have submitted an enquiry on your website (Ref: ${activeReference}). Please find my quote request.`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 transition-colors"
+            >
+              <MessageSquare className="w-4 h-4 text-emerald-600" />
+              <span>Confirm via WhatsApp</span>
+            </a>
+            <a
+              href={`mailto:sales@dkmedical.co.za?subject=${encodeURIComponent(`Website Enquiry - Ref ${activeReference}`)}`}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-sky-50 text-[#0178A2] hover:bg-sky-100 border border-sky-200 transition-colors"
+            >
+              <span>Email Sales Directly</span>
+            </a>
           </div>
         )}
 

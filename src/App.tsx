@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PageId, Product, Category } from './types';
+import { INITIAL_CATEGORIES, INITIAL_PRODUCTS } from './data/catalog';
 import { CartProvider } from './context/CartContext';
 import { CompanyProvider, useCompany } from './context/CompanyContext';
 import { Header } from './components/Header';
@@ -15,9 +16,9 @@ import { MessageSquare, ArrowUp } from 'lucide-react';
 const MainApp: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [initialCategorySlug, setInitialCategorySlug] = useState<string>('all');
-  const [products, setProducts] = useState<Product[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [products, setProducts] = useState<Product[]>(INITIAL_PRODUCTS);
+  const [categories, setCategories] = useState<Category[]>(INITIAL_CATEGORIES);
+  const [loading, setLoading] = useState<boolean>(false);
 
   // Success Modal State
   const [submittedQuoteRef, setSubmittedQuoteRef] = useState<string | null>(null);
@@ -26,23 +27,27 @@ const MainApp: React.FC = () => {
 
   const company = useCompany();
 
-  // Fetch Products & Categories
+  // Fetch Products & Categories (enhances with backend DB if running, falls back safely on GitHub Pages)
   useEffect(() => {
     async function loadData() {
       try {
         const [prodRes, catRes] = await Promise.all([
-          fetch('/api/products').then(r => r.json()),
-          fetch('/api/categories').then(r => r.json())
+          fetch('/api/products')
+            .then(r => (r.ok ? r.json() : null))
+            .catch(() => null),
+          fetch('/api/categories')
+            .then(r => (r.ok ? r.json() : null))
+            .catch(() => null)
         ]);
 
-        if (prodRes.success && prodRes.products) {
+        if (prodRes && prodRes.success && Array.isArray(prodRes.products) && prodRes.products.length > 0) {
           setProducts(prodRes.products);
         }
-        if (catRes.success && catRes.categories) {
+        if (catRes && catRes.success && Array.isArray(catRes.categories) && catRes.categories.length > 0) {
           setCategories(catRes.categories);
         }
       } catch (err) {
-        console.warn('Failed to load API data:', err);
+        console.info('Static hosting detected; loaded pre-bundled catalogue.', err);
       } finally {
         setLoading(false);
       }

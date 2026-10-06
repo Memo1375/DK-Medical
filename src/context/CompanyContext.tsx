@@ -22,14 +22,14 @@ export const CompanyProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   useEffect(() => {
     fetch('/api/config')
-      .then(res => res.json())
+      .then(res => (res.ok ? res.json() : null))
       .then(data => {
         if (data && data.name) {
           setConfig(data);
         }
       })
-      .catch(err => {
-        console.warn('Using default company configuration:', err);
+      .catch(() => {
+        // Static hosting mode
       });
   }, []);
 
